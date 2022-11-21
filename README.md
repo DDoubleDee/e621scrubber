@@ -13,7 +13,7 @@ How to use:
 
 How to get your API key:
 1. Log in on e621
-2. Press Account on the top bar
-3. Press Manage API access
+2. Press "Account" on the top bar
+3. Press "Manage API access"
 4. Re enter your password
 5. Your key should be there
