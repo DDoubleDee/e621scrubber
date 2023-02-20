@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css.css">
-        <script src="jquery-3.6.0.js" async defer></script>
-        <script src="js.js" async defer></script>
-    </head>
-    <body>
-        <div id="artists">
-            
-        </div>
-        <div id="post">
-            <img src="" style="display: none;">
-            <img src="" style="display: none;">
-            <img src="" style="display: none;">
-            <video src="" style="display: none;" controls>
-            </video>
-            <video src="" style="display: none;" controls>
-            </video>
-            <video src="" style="display: none;" controls>
-            </video>
-        </div>
-        <a target="_blank" href="">
-            Open this post on the site
-        </a>
-        <button onclick="getNextPost(true)" disabled>
-            Download this
-        </button>
-        <button onclick="getNextPost(false)" disabled>
-            Next
-        </button>
-        <button onclick="goBack()" disabled>
-            Fuck go back
-        </button>
-        <button onclick="nullCounter(); loadItems(false)">
+
+<head>
+    <meta charset="utf-8">
+    <title>e621 scrubber</title>
+    <meta name="description" content="Like e6, but better!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css.css">
+    <script src="jquery-3.6.0.js" async defer></script>
+    <script src="js.js" async defer></script>
+</head>
+
+<body>
+    <div id="max" onclick="minimize(event)" style="display: none;">
+        <img src="">
+        <video src="" controls autoplay>
+        </video>
+    </div>
+    <header>
+        <input type="text" id="page" placeholder="page to start from">
+        <button onclick="start(event)">
             Start loading items
         </button>
         <input type="text" id="tags" placeholder="tags go here">
-        <button onclick="goTo()" disabled>
-            Go to image number
-        </button>
-        <input type="text" id="counter" placeholder="image number (not ID) goes here">
         <div>
-            Please fill these two inputs! They are not saved anywhere except your browser's storage and are used in order to upvote the things you download! 
+            Please fill these two inputs! They are not saved anywhere except your browser's storage and are used in
+            order to
+            upvote the things you download!
         </div>
         <input type="text" id="login" placeholder="login goes here">
         <input type="password" id="api_key" placeholder="api_key goes here">
-    </body>
+    </header>
+    <main>
+    </main>
+    <template id="post">
+        <div class="post">
+            <div class="artists">
+
+            </div>
+            <div class="image">
+                <img onclick="maximize(event)" src="">
+                <div class="video" onclick="maximize(event)" style="display: none">VIDEO</div>
+            </div>
+            <div>
+                <a target="_blank" href="">
+                    Open on e6
+                </a>
+                <button onclick="download(event)">
+                    Download
+                </button>
+            </div>
+        </div>
+    </template>
+</body>
+
 </html>
